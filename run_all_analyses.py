@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
 Genomic Analysis Runner
-Runs several analysis scripts. Originally this tool attempted to run a
-``Pharmacy.py`` module which does not exist in the repository, leading to a
-``FileNotFoundError``.  The runner now executes three scripts that are present
-in this project: ``Disease.py``, ``Comprehensive_Disease.py`` and
-``Ethnicity.py``.
+
+This utility originally attempted to run a ``Pharmacy.py`` module which was not
+included in the repository and therefore caused a ``FileNotFoundError``.  The
+runner now executes only scripts that actually exist.  The available analyses
+include ``Disease.py``, ``Comprehensive_Disease.py``, ``Ethnicity.py`` and
+``Fitness_Athletics.py``.
 """
 
 import subprocess
@@ -33,6 +34,7 @@ if __name__ == "__main__":
     run_analysis("Disease.py")
     run_analysis("Comprehensive_Disease.py")
     run_analysis("Ethnicity.py")
+    run_analysis("Fitness_Athletics.py")
     
     print(f"\n{'='*60}")
     print("ANALYSIS COMPLETE")

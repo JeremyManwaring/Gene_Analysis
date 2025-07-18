@@ -12,8 +12,8 @@ Modules include:
 
 **Fitness**: Athletic trait probabilities and insights.
 
-Note: These files only look at the existing genes documented by researchers. They do not medically diagnose or give an accurate estimate on genetic variations due to 
-possible factors not yet discovered. These datasets also disproportionately draw from European datasets and do not accurately represent every population.
+**Note: These files only look at the existing genes documented by researchers. They do not medically diagnose or give an accurate estimate on genetic variations due to 
+possible factors not yet discovered. These datasets also disproportionately draw from European datasets and do not accurately represent every population.**
 
 ## Required input
 
@@ -51,4 +51,4 @@ rs3934834	1	995669	CT
 Place your own `Genome.txt` in the repository root before running any of
 the scripts.
 
-_For education only. Not medical advice. _
+_For education only. Not medical advice._ 

@@ -28,10 +28,10 @@ if __name__ == "__main__":
     print("GENOMIC SEQUENCE ANALYSIS")
     print("Analyzing your genetic data...")
     
-    # Run the available analyses
-    run_analysis("Disease.py")
-    run_analysis("Comprehensive_Disease.py")
-    run_analysis("Ethnicity.py")
+    # Run the available analyses with corrected paths
+    run_analysis("Disease Testing/Disease.py")
+    run_analysis("Disease Testing/Comprehensive_Disease.py")
+    run_analysis("Ethnicity/Ethnicity.py")
     
     print(f"\n{'='*60}")
     print("ANALYSIS COMPLETE")

@@ -40,6 +40,7 @@ comprehensive_snps = {
     'rs12134493':  {'disease': "Migraine", 'risk': ['A'], 'description': "Variant in CACNA1A gene affects migraine susceptibility.", 'population': 'Global'},
     'rs7216389':   {'disease': "Asthma (childhood)", 'risk': ['T'], 'description': "Variant on 17q21 linked to early asthma.", 'population': 'Global'},
     'rs7574865':   {'disease': "Lupus (SLE)", 'risk': ['T'], 'description': "STAT4 gene variant common in autoimmunity.", 'population': 'Global'},
+    'rs662799':   {'disease': "Hypertriglyceridemia", 'risk': ['C'], 'description': "APOA5 promoter variant linked to high triglycerides.", 'population': 'Global'},
     # East Asian-specific and high-prevalence markers
     'rs671':       {'disease': "Alcohol flush reaction (ALDH2 deficiency)", 'risk': ['A'], 'description': "ALDH2*2 allele causes alcohol intolerance, common in East Asians.", 'population': 'East Asian'},
     'rs1229984':   {'disease': "Alcohol metabolism (ADH1B)", 'risk': ['A'], 'description': "ADH1B*2 allele increases alcohol metabolism, common in East Asians.", 'population': 'East Asian'},
@@ -98,6 +99,13 @@ prs_models = {
         'rs3800373': ('C', 0.18, 'FKBP5'),
         'rs9470080': ('T', 0.16, 'SLC6A4'),
         'rs25531': ('A', 0.14, 'SLC6A4'),
+    },
+    'Hypertriglyceridemia': {
+        'rs662799': ('C', 0.30, 'APOA5'),
+        'rs3135506': ('G', 0.25, 'APOA5'),
+        'rs1801177': ('A', 0.20, 'APOE'),
+        'rs651821': ('C', 0.15, 'APOA5'),
+        'rs964184': ('G', 0.10, 'ZPR1'),
     },
 }
 

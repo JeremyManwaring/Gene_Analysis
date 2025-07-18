@@ -37,6 +37,7 @@ comprehensive_ethnic_snps = {
     'rs1801133': 'MTHFR - Folate metabolism',
     'rs1801131': 'MTHFR - Folate metabolism',
     'rs1805087': 'MTHFR - Folate metabolism',
+    'rs334': 'HBB - Sickle cell trait',
 
     # Lactose tolerance markers
     'rs4988235': 'LCT - Lactose tolerance',

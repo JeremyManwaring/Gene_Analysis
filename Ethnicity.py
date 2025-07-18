@@ -13,6 +13,7 @@ ethnic_snps = {
     'rs2736100': 'TERT – Telomere length differences across populations',
     'rs6058017': 'HERC2 – European light hair and eye pigmentation',
     'rs11076174': 'SLC39A8 – Height and metabolic traits differing by ancestry',
+    'rs334': 'HBB – Sickle cell trait (African ancestry indicator)',
     # add more ancestry-informative markers here
 }
 

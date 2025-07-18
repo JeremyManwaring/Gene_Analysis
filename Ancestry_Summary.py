@@ -52,6 +52,9 @@ ancestry_categories = {
         'rs1229984': 'ADH1B - Alcohol metabolism',
         'rs671': 'ALDH2 - Alcohol metabolism',
     },
+    'African Ancestry Markers': {
+        'rs334': 'HBB - Sickle cell trait indicator',
+    },
     'European Ancestry Markers': {
         'rs6058017': 'HERC2 - European light pigmentation',
     }

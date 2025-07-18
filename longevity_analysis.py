@@ -69,6 +69,7 @@ class LongevityAgingAnalyzer:
             'rs1800896': {'gene': 'IL10', 'effect': 'Longevity', 'weight': 0.09},
             'rs1045485': {'gene': 'CASP8', 'effect': 'Aging rate', 'weight': 0.08},
             'rs1799983': {'gene': 'NOS3', 'effect': 'Lifespan', 'weight': 0.07},
+            'rs2802292': {'gene': 'FOXO3', 'effect': 'Longevity variant', 'weight': 0.14},
         }
 
         # Cellular senescence markers
@@ -319,6 +320,7 @@ class LongevityBiomarkersAnalyzer:
             'rs6265': {'gene': 'BDNF', 'effect': 'Brain health - longevity', 'weight': 0.14, 'protective_allele': 'G'},
             'rs1045485': {'gene': 'CASP8', 'effect': 'Apoptosis regulation', 'weight': 0.09, 'protective_allele': 'G'},
             'rs1800629': {'gene': 'TNF', 'effect': 'Inflammation control', 'weight': 0.08, 'protective_allele': 'A'},
+            'rs2802292': {'gene': 'FOXO3', 'effect': 'Longevity variant', 'weight': 0.18, 'protective_allele': 'G'},
         }
 
         self.centenarian_markers = {
@@ -332,6 +334,7 @@ class LongevityBiomarkersAnalyzer:
             'rs1045485': {'gene': 'CASP8', 'effect': 'Cell survival - centenarian', 'weight': 0.15, 'protective_allele': 'G'},
             'rs1800629': {'gene': 'TNF', 'effect': 'Immune longevity', 'weight': 0.14, 'protective_allele': 'A'},
             'rs1800896': {'gene': 'IL10', 'effect': 'Anti-aging immune', 'weight': 0.16, 'protective_allele': 'A'},
+            'rs2802292': {'gene': 'FOXO3', 'effect': 'Longevity variant', 'weight': 0.20, 'protective_allele': 'G'},
         }
 
         self.anti_aging_markers = {
@@ -358,6 +361,7 @@ class LongevityBiomarkersAnalyzer:
             'rs1045485': {'gene': 'CASP8', 'effect': 'Metabolic survival', 'weight': 0.11, 'protective_allele': 'G'},
             'rs1800629': {'gene': 'TNF', 'effect': 'Metabolic inflammation', 'weight': 0.12, 'protective_allele': 'A'},
             'rs1800371': {'gene': 'TP53', 'effect': 'Metabolic DNA repair', 'weight': 0.14, 'protective_allele': 'A'},
+            'rs2802292': {'gene': 'FOXO3', 'effect': 'Metabolic longevity', 'weight': 0.17, 'protective_allele': 'G'},
         }
 
     def load_genome_data(self, filename: str) -> Dict[str, str]:

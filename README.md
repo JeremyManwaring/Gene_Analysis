@@ -1,10 +1,9 @@
 # Gene_Analysis
 Drop your genome.txt file in the folder and run any script.
+No setup required: Scripts auto-install pandas if needed, with no VM
 
-No setup required: Scripts auto-install pandas if needed—no virtual environments.
 
 Modules include:
-
 **Ethnicity/Ancestry**: Population markers, trait breakdown, interpretation.
 
 **Disease** Risk: Major disease SNPs, polygenic risk scores, clear summaries.

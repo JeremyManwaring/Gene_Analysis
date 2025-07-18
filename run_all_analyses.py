@@ -32,6 +32,8 @@ if __name__ == "__main__":
     run_analysis("Disease Testing/Disease.py")
     run_analysis("Disease Testing/Comprehensive_Disease.py")
     run_analysis("Ethnicity/Ethnicity.py")
+    run_analysis("Longevity/Longevity.py")
+    run_analysis("Longevity/Comprehensive_Longevity.py")
     
     print(f"\n{'='*60}")
     print("ANALYSIS COMPLETE")

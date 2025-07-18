@@ -5,10 +5,14 @@ No setup required: Scripts auto-install pandas if needed—no virtual environmen
 
 Modules include:
 
-Ethnicity/Ancestry: Population markers, trait breakdown, interpretation.
-Disease Risk: Major disease SNPs, polygenic risk scores, clear summaries.
-Longevity: Aging and protective markers, risk scores, recommendations.
-Fitness: Athletic trait probabilities and insights.
+**Ethnicity/Ancestry**: Population markers, trait breakdown, interpretation.
+
+**Disease** Risk: Major disease SNPs, polygenic risk scores, clear summaries.
+
+**Longevity**: Aging and protective markers, risk scores, recommendations.
+
+**Fitness**: Athletic trait probabilities and insights.
+
 For education only. Not medical advice.
 ## Required input
 

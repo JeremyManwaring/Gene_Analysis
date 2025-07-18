@@ -8,23 +8,19 @@ df.columns = ['rsid', 'chromosome', 'position', 'genotype']
 comprehensive_ethnic_snps = {
     # East Asian specific markers
     'rs3827760': 'EDAR - East Asian hair thickness',
-    'rs1426654': 'SLC24A5 - Skin pigmentation (European vs African)',
-    'rs16891982': 'SLC45A2 - Skin/hair/eye color',
-    'rs12913832': 'HERC2/OCA2 - Eye color (European)',
-    'rs1805007': 'MC1R - Red hair (European)',
+    'rs1426654': 'SLC24A5 - Skin pigmentation',
+    'rs16891982': 'SLC45A2 - Skin pigmentation',
+    'rs12913832': 'HERC2/OCA2 - Eye color',
+    'rs1805007': 'MC1R - Red hair',
     'rs1805008': 'MC1R - Red hair variant',
     'rs885479': 'IRF4 - Hair color',
-    'rs16891982': 'SLC45A2 - Skin pigmentation',
     'rs12203592': 'IRF4 - Hair/skin color',
     'rs1545397': 'OCA2 - Eye color',
     'rs1800401': 'OCA2 - Eye color variant',
     'rs4778138': 'OCA2 - Eye color',
     'rs7495174': 'OCA2 - Eye color',
     'rs4778241': 'OCA2 - Eye color',
-    'rs4778138': 'OCA2 - Eye color',
-    'rs7495174': 'OCA2 - Eye color',
-    'rs4778241': 'OCA2 - Eye color',
-    
+
     # South Asian markers
     'rs1042602': 'TYR - Skin pigmentation',
     'rs1800414': 'OCA2 - Eye color',
@@ -32,31 +28,7 @@ comprehensive_ethnic_snps = {
     'rs1800408': 'OCA2 - Eye color',
     'rs1800409': 'OCA2 - Eye color',
     'rs1800410': 'OCA2 - Eye color',
-    
-    # Native American markers
-    'rs1805007': 'MC1R - Red hair',
-    'rs1805008': 'MC1R - Red hair variant',
-    'rs885479': 'IRF4 - Hair color',
-    'rs12203592': 'IRF4 - Hair/skin color',
-    
-    # African markers
-    'rs1426654': 'SLC24A5 - Skin pigmentation',
-    'rs16891982': 'SLC45A2 - Skin pigmentation',
-    'rs12913832': 'HERC2/OCA2 - Eye color',
-    'rs1805007': 'MC1R - Red hair',
-    'rs1805008': 'MC1R - Red hair variant',
-    'rs885479': 'IRF4 - Hair color',
-    'rs12203592': 'IRF4 - Hair/skin color',
-    
-    # Middle Eastern markers
-    'rs1426654': 'SLC24A5 - Skin pigmentation',
-    'rs16891982': 'SLC45A2 - Skin pigmentation',
-    'rs12913832': 'HERC2/OCA2 - Eye color',
-    'rs1805007': 'MC1R - Red hair',
-    'rs1805008': 'MC1R - Red hair variant',
-    'rs885479': 'IRF4 - Hair color',
-    'rs12203592': 'IRF4 - Hair/skin color',
-    
+
     # Additional ancestry markers
     'rs2736100': 'TERT - Telomere length',
     'rs6058017': 'HERC2 - European light pigmentation',
@@ -64,41 +36,14 @@ comprehensive_ethnic_snps = {
     'rs1801133': 'MTHFR - Folate metabolism',
     'rs1801131': 'MTHFR - Folate metabolism',
     'rs1805087': 'MTHFR - Folate metabolism',
-    'rs1801133': 'MTHFR - Folate metabolism',
-    'rs1801131': 'MTHFR - Folate metabolism',
-    'rs1805087': 'MTHFR - Folate metabolism',
-    
+
     # Lactose tolerance markers
     'rs4988235': 'LCT - Lactose tolerance',
     'rs182549': 'LCT - Lactose tolerance',
-    'rs4988235': 'LCT - Lactose tolerance',
-    'rs182549': 'LCT - Lactose tolerance',
-    
+
     # Alcohol metabolism markers
     'rs1229984': 'ADH1B - Alcohol metabolism',
-    'rs671': 'ALDH2 - Alcohol metabolism',
-    'rs1229984': 'ADH1B - Alcohol metabolism',
-    'rs671': 'ALDH2 - Alcohol metabolism',
-    
-    # Additional pigmentation markers
-    'rs16891982': 'SLC45A2 - Skin pigmentation',
-    'rs1426654': 'SLC24A5 - Skin pigmentation',
-    'rs12913832': 'HERC2/OCA2 - Eye color',
-    'rs1805007': 'MC1R - Red hair',
-    'rs1805008': 'MC1R - Red hair variant',
-    'rs885479': 'IRF4 - Hair color',
-    'rs12203592': 'IRF4 - Hair/skin color',
-    'rs1545397': 'OCA2 - Eye color',
-    'rs1800401': 'OCA2 - Eye color variant',
-    'rs4778138': 'OCA2 - Eye color',
-    'rs7495174': 'OCA2 - Eye color',
-    'rs4778241': 'OCA2 - Eye color',
-    'rs1042602': 'TYR - Skin pigmentation',
-    'rs1800414': 'OCA2 - Eye color',
-    'rs1800407': 'OCA2 - Eye color',
-    'rs1800408': 'OCA2 - Eye color',
-    'rs1800409': 'OCA2 - Eye color',
-    'rs1800410': 'OCA2 - Eye color'
+    'rs671': 'ALDH2 - Alcohol metabolism'
 }
 
 print("\n==============================")

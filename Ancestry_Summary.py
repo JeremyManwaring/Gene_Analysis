@@ -1,8 +1,18 @@
+"""Print a quick summary of ancestry related SNPs found in ``Genome.txt``.
+
+The script groups markers by trait (skin pigmentation, eye color, etc.) and
+shows whether each SNP is present in the genotype file.  At the end a short
+summary with counts for each category is displayed.
+"""
+
 import pandas as pd
 
-# Load your genotype data
-df = pd.read_csv('Genome.txt', sep='\t', comment='#', header=None)
-df.columns = ['rsid', 'chromosome', 'position', 'genotype']
+
+def load_data() -> pd.DataFrame:
+    """Read ``Genome.txt`` into a DataFrame."""
+    df = pd.read_csv("Genome.txt", sep="\t", comment="#", header=None)
+    df.columns = ["rsid", "chromosome", "position", "genotype"]
+    return df
 
 # Comprehensive ancestry-informative SNPs organized by category
 ancestry_categories = {
@@ -50,114 +60,118 @@ ancestry_categories = {
     }
 }
 
-print("\n==============================")
-print("COMPREHENSIVE ANCESTRY SUMMARY")
-print("==============================\n")
 
-# Track results for summary
-all_results = {}
-category_counts = {}
+def main() -> None:
+    """Run the ancestry summary using the SNP table above."""
+    df = load_data()
 
-for category, snps in ancestry_categories.items():
+    print("\n==============================")
+    print("COMPREHENSIVE ANCESTRY SUMMARY")
+    print("==============================\n")
+
+    all_results = {}
+    category_counts = {}
+
+    for category, snps in ancestry_categories.items():
+        print(f"{'='*60}")
+        print(f"CATEGORY: {category}")
+        print(f"{'='*60}")
+
+        found_count = 0
+
+        for rsid, description in snps.items():
+            row = df[df["rsid"] == rsid]
+            if not row.empty:
+                genotype = row.iloc[0]["genotype"]
+                found_count += 1
+                all_results[rsid] = (genotype, description, category)
+                print(f"{'-'*50}")
+                print(f"SNP: {rsid}")
+                print(f"Genotype: {genotype}")
+                print(f"Function: {description}")
+                print()
+            else:
+                print(f"{'-'*50}")
+                print(f"SNP: {rsid} - NOT FOUND IN DATA")
+                print(f"Function: {description}")
+                print()
+
+        category_counts[category] = (found_count, len(snps))
+
     print(f"{'='*60}")
-    print(f"CATEGORY: {category}")
+    print("SUMMARY STATISTICS")
     print(f"{'='*60}")
-    
-    category_results = []
-    found_count = 0
-    
-    for rsid, description in snps.items():
-        row = df[df["rsid"] == rsid]
-        if not row.empty:
-            genotype = row.iloc[0]["genotype"]
-            found_count += 1
-            category_results.append((rsid, genotype, description))
-            all_results[rsid] = (genotype, description, category)
-            print(f"{'-'*50}")
-            print(f"SNP: {rsid}")
-            print(f"Genotype: {genotype}")
-            print(f"Function: {description}")
-            print()
+
+    total_found = sum(count for count, _ in category_counts.values())
+    total_snps = sum(total for _, total in category_counts.values())
+
+    print(f"Total SNPs analyzed: {total_snps}")
+    print(f"SNPs found in your data: {total_found}")
+    print(f"SNPs missing: {total_snps - total_found}")
+    print(f"Data coverage: {(total_found/total_snps)*100:.1f}%")
+
+    print(f"\n{'='*60}")
+    print("CATEGORY BREAKDOWN")
+    print(f"{'='*60}")
+
+    for category, (found, total) in category_counts.items():
+        coverage = (found / total) * 100 if total else 0
+        print(f"{category:<25} {found}/{total} SNPs ({coverage:.1f}% coverage)")
+
+    print(f"\n{'='*60}")
+    print("POPULATION-SPECIFIC ANALYSIS")
+    print(f"{'='*60}")
+
+    east_asian_markers = ['rs3827760']
+    european_markers = [
+        'rs1426654', 'rs16891982', 'rs12913832', 'rs1805007',
+        'rs1805008', 'rs885479', 'rs12203592', 'rs6058017'
+    ]
+    african_markers = ['rs1426654', 'rs16891982', 'rs12913832']
+
+    east_asian_count = sum(1 for rsid in all_results if rsid in east_asian_markers)
+    european_count = sum(1 for rsid in all_results if rsid in european_markers)
+    african_count = sum(1 for rsid in all_results if rsid in african_markers)
+
+    print(f"East Asian markers found: {east_asian_count}")
+    print(f"European markers found: {european_count}")
+    print(f"African markers found: {african_count}")
+
+    print(f"\n{'='*60}")
+    print("KEY FINDINGS")
+    print(f"{'='*60}")
+
+    if 'rs3827760' in all_results:
+        genotype = all_results['rs3827760'][0]
+        if genotype in ('AA', 'AG'):
+            print("✓ East Asian hair thickness variant detected")
         else:
-            print(f"{'-'*50}")
-            print(f"SNP: {rsid} - NOT FOUND IN DATA")
-            print(f"Function: {description}")
-            print()
-    
-    category_counts[category] = (found_count, len(snps))
+            print("✗ East Asian hair thickness variant not detected")
 
-# Summary Statistics
-print(f"{'='*60}")
-print("SUMMARY STATISTICS")
-print(f"{'='*60}")
+    if 'rs671' in all_results:
+        genotype = all_results['rs671'][0]
+        if genotype in ('AA', 'AG'):
+            print("✓ Asian flush (ALDH2 deficiency) variant detected")
+        else:
+            print("✗ Asian flush variant not detected")
 
-total_found = sum(count for count, total in category_counts.values())
-total_snps = sum(total for count, total in category_counts.values())
+    if 'rs4988235' in all_results:
+        genotype = all_results['rs4988235'][0]
+        if 'C' in genotype:
+            print("✓ Lactose intolerance variant detected")
+        else:
+            print("✗ Lactose intolerance variant not detected")
 
-print(f"Total SNPs analyzed: {total_snps}")
-print(f"SNPs found in your data: {total_found}")
-print(f"SNPs missing: {total_snps - total_found}")
-print(f"Data coverage: {(total_found/total_snps)*100:.1f}%")
+    print(f"\n{'='*60}")
+    print("INTERPRETATION")
+    print(f"{'='*60}")
+    print("- This analysis examines genetic markers that differ between populations")
+    print("- Higher counts in a category suggest genetic similarity to that population")
+    print("- Remember: Genetic ancestry ≠ Cultural identity")
+    print("- These results are statistical associations, not definitive ancestry")
+    print("- Individual genetic variation is complex and doesn't fit simple categories")
+    print("- Your cultural identity is valid regardless of genetic markers")
 
-print(f"\n{'='*60}")
-print("CATEGORY BREAKDOWN")
-print(f"{'='*60}")
 
-for category, (found, total) in category_counts.items():
-    coverage = (found/total)*100 if total > 0 else 0
-    print(f"{category:<25} {found}/{total} SNPs ({coverage:.1f}% coverage)")
-
-# Population-specific analysis
-print(f"\n{'='*60}")
-print("POPULATION-SPECIFIC ANALYSIS")
-print(f"{'='*60}")
-
-# Define population markers
-east_asian_markers = ['rs3827760']
-european_markers = ['rs1426654', 'rs16891982', 'rs12913832', 'rs1805007', 'rs1805008', 'rs885479', 'rs12203592', 'rs6058017']
-african_markers = ['rs1426654', 'rs16891982', 'rs12913832']
-
-east_asian_count = sum(1 for rsid in all_results.keys() if rsid in east_asian_markers)
-european_count = sum(1 for rsid in all_results.keys() if rsid in european_markers)
-african_count = sum(1 for rsid in all_results.keys() if rsid in african_markers)
-
-print(f"East Asian markers found: {east_asian_count}")
-print(f"European markers found: {european_count}")
-print(f"African markers found: {african_count}")
-
-# Key findings summary
-print(f"\n{'='*60}")
-print("KEY FINDINGS")
-print(f"{'='*60}")
-
-# Analyze specific patterns
-if 'rs3827760' in all_results:
-    genotype = all_results['rs3827760'][0]
-    if genotype == 'AA' or genotype == 'AG':
-        print("✓ East Asian hair thickness variant detected")
-    else:
-        print("✗ East Asian hair thickness variant not detected")
-
-if 'rs671' in all_results:
-    genotype = all_results['rs671'][0]
-    if genotype == 'AA' or genotype == 'AG':
-        print("✓ Asian flush (ALDH2 deficiency) variant detected")
-    else:
-        print("✗ Asian flush variant not detected")
-
-if 'rs4988235' in all_results:
-    genotype = all_results['rs4988235'][0]
-    if 'C' in genotype:
-        print("✓ Lactose intolerance variant detected")
-    else:
-        print("✗ Lactose intolerance variant not detected")
-
-print(f"\n{'='*60}")
-print("INTERPRETATION")
-print(f"{'='*60}")
-print("- This analysis examines genetic markers that differ between populations")
-print("- Higher counts in a category suggest genetic similarity to that population")
-print("- Remember: Genetic ancestry ≠ Cultural identity")
-print("- These results are statistical associations, not definitive ancestry")
-print("- Individual genetic variation is complex and doesn't fit simple categories")
-print("- Your cultural identity is valid regardless of genetic markers") 
+if __name__ == "__main__":
+    main()

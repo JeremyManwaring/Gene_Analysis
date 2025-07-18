@@ -1,12 +1,20 @@
+"""Detailed disease risk report based on SNPs in ``Genome.txt``."""
+
 import pandas as pd
 
-# Load genotype data
-df = pd.read_csv('Genome.txt', sep='\t', comment='#', header=None)
-df.columns = ['rsid', 'chromosome', 'position', 'genotype']
+
+def load_data() -> pd.DataFrame:
+    """Read the genotype file into a DataFrame."""
+    df = pd.read_csv("Genome.txt", sep="\t", comment="#", header=None)
+    df.columns = ["rsid", "chromosome", "position", "genotype"]
+    return df
 
 def get_allele_count(genotype, risk_allele):
     """Count the number of risk alleles in a genotype string."""
     return genotype.count(risk_allele)
+
+
+df = load_data()
 
 # Expanded disease SNP panel (global + East Asian)
 # Format: rsid: {disease, risk, description, population}
@@ -185,4 +193,8 @@ print("- NO RISK: You do not carry the known risk alleles")
 print("- NOT FOUND: This SNP was not present in your genetic data")
 print("- PRS: Higher scores = higher genetic risk compared to population average")
 print("- These results are for educational purposes only")
-print("- Consult healthcare professionals for medical advice") 
+print("- Consult healthcare professionals for medical advice")
+
+
+if __name__ == "__main__":
+    pass

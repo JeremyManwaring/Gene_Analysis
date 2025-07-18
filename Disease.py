@@ -1,6 +1,10 @@
+"""Simple disease risk lookup for SNPs in ``Genome.txt``."""
+
 import pandas as pd
-df = pd.read_csv('Genome.txt', sep='\t', comment='#', header=None)
-df.columns = ['rsid', 'chromosome', 'position', 'genotype']
+
+df = pd.read_csv("Genome.txt", sep="\t", comment="#", header=None)
+df.columns = ["rsid", "chromosome", "position", "genotype"]
+
 snps = {
     'rs429358':    {'disease': "Alzheimer's (late onset)", 'risk': ['C'], 'description': "APOE ε4 allele increases risk of late-onset Alzheimer's."},
     'rs2187668':   {'disease': "Celiac disease", 'risk': ['T'], 'description': "Associated with HLA-DQ2, key in immune response to gluten."},
@@ -55,3 +59,7 @@ for rsid, data in snps.items():
     else:
         print(f"Disease: {data['disease']}")
         print(f"  - SNP: {rsid} not found in your raw data.\n")
+
+
+if __name__ == "__main__":
+    pass

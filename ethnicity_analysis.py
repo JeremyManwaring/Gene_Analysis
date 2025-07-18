@@ -1,8 +1,9 @@
+"""Full ethnicity summary using SNP markers."""
+
 import pandas as pd
 
-# Load genotype data
-df = pd.read_csv('Genome.txt', sep='\t', comment='#', header=None)
-df.columns = ['rsid', 'chromosome', 'position', 'genotype']
+df = pd.read_csv("Genome.txt", sep="\t", comment="#", header=None)
+df.columns = ["rsid", "chromosome", "position", "genotype"]
 
 # Quick ethnicity-informative SNPs
 ethnic_snps = {
@@ -169,3 +170,7 @@ print("- Remember: Genetic ancestry ≠ Cultural identity")
 print("- These results are statistical associations, not definitive ancestry")
 print("- Individual genetic variation is complex and doesn't fit simple categories")
 print("- Your cultural identity is valid regardless of genetic markers")
+
+
+if __name__ == "__main__":
+    pass

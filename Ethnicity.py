@@ -1,8 +1,9 @@
+"""Display a brief list of ethnicity informative SNPs found in ``Genome.txt``."""
+
 import pandas as pd
 
-# Load your genotype data into a DataFrame named `df`
-df = pd.read_csv('Genome.txt', sep='\t', comment='#', header=None)
-df.columns = ['rsid', 'chromosome', 'position', 'genotype']
+df = pd.read_csv("Genome.txt", sep="\t", comment="#", header=None)
+df.columns = ["rsid", "chromosome", "position", "genotype"]
 # Ethnicity-informative SNPs – variants known to differ across populations
 ethnic_snps = {
     'rs1426654': 'SLC24A5 – Skin pigmentation, differentiates European vs. African ancestry',
@@ -23,3 +24,7 @@ for rsid, note in ethnic_snps.items():
         print(f"{rsid}: {genotype} → {note}")
     else:
         print(f"{rsid}: SNP not found in your file")
+
+
+if __name__ == "__main__":
+    pass

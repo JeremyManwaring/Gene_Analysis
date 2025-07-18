@@ -533,7 +533,7 @@ class LongevityAgingAnalyzer:
 
     def run_analysis(self, genome_file: str = "Genome.txt") -> Dict:
         """Run comprehensive longevity and aging analysis"""
-        print("🧬 LONGITUDITY & AGING ANALYSIS")
+        print("🧬 LONGEVITY & AGING ANALYSIS")
         print("=" * 50)
         
         # Load genome data

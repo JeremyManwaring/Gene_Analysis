@@ -1,8 +1,9 @@
+"""Comprehensive ancestry marker check using ``Genome.txt``."""
+
 import pandas as pd
 
-# Load your genotype data
-df = pd.read_csv('Genome.txt', sep='\t', comment='#', header=None)
-df.columns = ['rsid', 'chromosome', 'position', 'genotype']
+df = pd.read_csv("Genome.txt", sep="\t", comment="#", header=None)
+df.columns = ["rsid", "chromosome", "position", "genotype"]
 
 # Comprehensive ancestry-informative SNPs
 comprehensive_ethnic_snps = {
@@ -106,4 +107,8 @@ print("- This analysis examines genetic markers that differ between populations"
 print("- Higher counts in a category suggest genetic similarity to that population")
 print("- Remember: Genetic ancestry ≠ Cultural identity")
 print("- These results are statistical associations, not definitive ancestry")
-print("- Individual genetic variation is complex and doesn't fit simple categories") 
+print("- Individual genetic variation is complex and doesn't fit simple categories")
+
+
+if __name__ == "__main__":
+    pass

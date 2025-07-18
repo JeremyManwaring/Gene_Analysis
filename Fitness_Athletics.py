@@ -1,8 +1,9 @@
+"""Estimate athletic trait probabilities from genotype data."""
+
 import pandas as pd
 import random
 
-# Load genotype data
-df = pd.read_csv('Genome.txt', sep='\t', comment='#', header=None)
+df = pd.read_csv("Genome.txt", sep="\t", comment="#", header=None)
 df.columns = ['rsid', 'chromosome', 'position', 'genotype']
 
 def get_allele_count(genotype, risk_allele):
@@ -221,4 +222,8 @@ print("- These probabilities indicate genetic predispositions, not limitations")
 print("- Training can significantly improve performance regardless of genetics")
 print("- Focus on your strengths while developing areas of opportunity")
 print("- Consult with fitness professionals for personalized training plans")
-print("- These results are for educational purposes only") 
+print("- These results are for educational purposes only")
+
+
+if __name__ == "__main__":
+    pass

@@ -8,7 +8,10 @@ Modules include:
 
 **Disease** Risk: Major disease SNPs, polygenic risk scores, clear summaries.
 
-**Longevity**: Aging and protective markers, risk scores, recommendations.
+**Longevity**: Aging and protective markers, risk scores, recommendations. Two
+  scripts are provided in the ``Longevity`` folder:
+  ``Longevity.py`` for a quick summary and ``Comprehensive_Longevity.py`` for a
+  full probability-based analysis.
 
 **Fitness**: Athletic trait probabilities and insights.
 

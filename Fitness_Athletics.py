@@ -42,6 +42,7 @@ fitness_snps = {
         'rs12722': {'risk': ['T'], 'description': 'COL5A1 - Tendon injury risk', 'weight': 0.30},
         'rs13946': {'risk': ['C'], 'description': 'COL12A1 - Ligament injury', 'weight': 0.20},
         'rs1800013': {'risk': ['G'], 'description': 'COL1A1 - Stress fracture risk', 'weight': 0.15},
+        'rs2228570': {'risk': ['A'], 'description': 'VDR - Bone density and injury recovery', 'weight': 0.10},
     },
     'Recovery Rate': {
         'rs1800629': {'risk': ['A'], 'description': 'TNF - Inflammation response', 'weight': 0.30},

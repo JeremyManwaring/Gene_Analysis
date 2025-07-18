@@ -36,7 +36,7 @@ def test_calculate_polygenic_risk_score():
     analyzer = LongevityAgingAnalyzer()
     result = analyzer.calculate_polygenic_risk_score(SAMPLE_GENOME)
     assert result['markers_used'] == 5
-    assert pytest.approx(result['polygenic_score'], rel=1e-6) == 0.305 / 25
+    assert pytest.approx(result['polygenic_score'], rel=1e-6) == 0.305 / 26
     assert result['overall_aging_risk'] == 'High'
-    assert pytest.approx(result['aging_rate_probability'], rel=1e-6) == 1 - (0.305 / 25)
+    assert pytest.approx(result['aging_rate_probability'], rel=1e-6) == 1 - (0.305 / 26)
 

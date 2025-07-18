@@ -63,7 +63,8 @@ class LongevityAgingAnalyzer:
             'rs1800795': {'gene': 'IL6', 'effect': 'Aging rate', 'weight': 0.10},
             'rs1800896': {'gene': 'IL10', 'effect': 'Longevity', 'weight': 0.09},
             'rs1045485': {'gene': 'CASP8', 'effect': 'Aging rate', 'weight': 0.08},
-            'rs1799983': {'gene': 'NOS3', 'effect': 'Lifespan', 'weight': 0.07}
+            'rs1799983': {'gene': 'NOS3', 'effect': 'Lifespan', 'weight': 0.07},
+            'rs2802292': {'gene': 'FOXO3', 'effect': 'Longevity variant', 'weight': 0.15}
         }
         
         # Cellular senescence markers
@@ -77,7 +78,8 @@ class LongevityAgingAnalyzer:
             'rs1045485': {'gene': 'CASP8', 'effect': 'Senescence', 'weight': 0.08},
             'rs1801133': {'gene': 'MTHFR', 'effect': 'Cellular aging', 'weight': 0.07},
             'rs1799983': {'gene': 'NOS3', 'effect': 'Senescence', 'weight': 0.06},
-            'rs1800629': {'gene': 'TNF', 'effect': 'Cellular aging', 'weight': 0.05}
+            'rs1800629': {'gene': 'TNF', 'effect': 'Cellular aging', 'weight': 0.05},
+            'rs2802292': {'gene': 'FOXO3', 'effect': 'Longevity variant', 'weight': 0.14}
         }
         
         # Metabolic aging markers
@@ -92,6 +94,7 @@ class LongevityAgingAnalyzer:
             'rs1800371': {'gene': 'TP53', 'effect': 'Metabolic rate', 'weight': 0.07},
             'rs1045485': {'gene': 'CASP8', 'effect': 'Metabolic aging', 'weight': 0.06},
             'rs1800629': {'gene': 'TNF', 'effect': 'Metabolic rate', 'weight': 0.05}
+            ,'rs2802292': {'gene': 'FOXO3', 'effect': 'Metabolic longevity', 'weight': 0.13}
         }
 
     def load_genome_data(self, filename: str) -> Dict[str, str]:

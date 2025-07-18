@@ -13,6 +13,7 @@ ethnic_snps = {
     'rs2736100': 'TERT – Telomere length differences across populations',
     'rs6058017': 'HERC2 – European light hair and eye pigmentation',
     'rs11076174': 'SLC39A8 – Height and metabolic traits differing by ancestry',
+    'rs334': 'HBB – Sickle cell trait indicator',
 }
 
 print("\nETHNICITY-INFORMATIVE SNPS:\n")
@@ -61,6 +62,9 @@ ancestry_categories = {
     'Alcohol Metabolism': {
         'rs1229984': 'ADH1B - Alcohol metabolism',
         'rs671': 'ALDH2 - Alcohol metabolism',
+    },
+    'African Ancestry Markers': {
+        'rs334': 'HBB - Sickle cell trait indicator',
     },
     'European Ancestry Markers': {
         'rs6058017': 'HERC2 - European light pigmentation',

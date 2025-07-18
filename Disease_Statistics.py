@@ -219,6 +219,15 @@ def analyze_disease_risk():
             'population_frequency': 0.15,
             'odds_ratio': 1.6,
             'confidence_interval': '1.3-2.0'
+        },
+        'rs662799': {
+            'disease': 'Hypertriglyceridemia',
+            'gene': 'APOA5',
+            'risk_alleles': ['C'],
+            'risk_description': 'APOA5 promoter variant linked to high triglycerides',
+            'population_frequency': 0.20,
+            'odds_ratio': 1.9,
+            'confidence_interval': '1.4-2.5'
         }
     }
     

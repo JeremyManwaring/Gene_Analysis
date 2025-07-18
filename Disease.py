@@ -21,7 +21,8 @@ snps = {
     'rs6265':      {'disease': "Depression / neuroticism", 'risk': ['C'], 'description': "BDNF gene variant may affect mood regulation."},
     'rs12134493':  {'disease': "Migraine", 'risk': ['A'], 'description': "Variant in CACNA1A gene affects migraine susceptibility."},
     'rs7216389':   {'disease': "Asthma (childhood)", 'risk': ['T'], 'description': "Variant on 17q21 linked to early asthma."},
-    'rs7574865':   {'disease': "Lupus (SLE)", 'risk': ['T'], 'description': "STAT4 gene variant common in autoimmunity."}
+    'rs7574865':   {'disease': "Lupus (SLE)", 'risk': ['T'], 'description': "STAT4 gene variant common in autoimmunity."},
+    'rs662799':   {'disease': "Hypertriglyceridemia", 'risk': ['C'], 'description': "APOA5 promoter variant linked to high triglycerides."}
 }
 
 # Polygenic risk score SNPs – risk variants for complex traits
@@ -34,6 +35,7 @@ prs_snps = {
     'rs2981582': 'FGFR2 – Breast cancer risk',
     'rs7597593': 'ZNF804A – Schizophrenia risk',
     'rs1067828': 'SLC6A4 – Depression and SSRI response',
+    'rs662799': 'APOA5 – Hypertriglyceridemia risk',
     # add more PRS SNPs relevant to your traits here
 
 }

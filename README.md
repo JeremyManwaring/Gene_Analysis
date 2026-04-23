@@ -1,6 +1,10 @@
 # Gene_Analysis
 Drop your genome.txt file in the folder and run any script.
-No setup required: Scripts auto-install pandas if needed, with no VM
+
+
+**Run on terminal**
+python run_all_analyses.py "/Users/yourname/Desktop/Genome.txt"
+
 
 
 Modules include:

@@ -1,52 +1,66 @@
-# Gene_Analysis
-Drop your genome.txt file in the folder and run any script.
+# 🧬 Gene Analysis Toolkit
 
+Analyze your raw DNA data with modular scripts for ancestry, disease risk, longevity, and fitness insights.
 
-**Run on terminal**
+---
+
+## 🚀 Quick Start
+
+1. Place your genome file in the project folder  
+2. Rename it to `Genome.txt`  
+3. Run:
+
+```bash
 python run_all_analyses.py "/Users/yourname/Desktop/Genome.txt"
-
-
-
-Modules include:
-**Ethnicity/Ancestry**: Population markers, trait breakdown, interpretation.
-
-**Disease** Risk: Major disease SNPs, polygenic risk scores, clear summaries.
-
-**Longevity**: Aging and protective markers, risk scores, recommendations. Two
-  scripts are provided in the ``Longevity`` folder:
-  ``Longevity.py`` for a quick summary and ``Comprehensive_Longevity.py`` for a
-  full probability-based analysis.
-
-**Fitness**: Athletic trait probabilities and insights.
-
-**Note: These files only look at the existing genes documented by researchers. They do not medically diagnose or give an accurate estimate on genetic variations due to 
-possible factors not yet discovered. These datasets also disproportionately draw from European datasets and do not accurately represent every population.**
-
-## Required input
-
-All scripts expect a genotype file named `Genome.txt` in the project
-directory. This file should be a tab-separated text file containing four
-columns in the following order:
-
-```
-rsid    chromosome  position  genotype
 ```
 
-Lines beginning with `#` are treated as comments and are ignored. The
-format mirrors the raw data files provided by personal genomics services
-(such as 23andMe).
+---
 
-### Obtaining a genome file
+## 📦 Features
 
-To use your own data, download the raw DNA data from your provider and
-rename the file to `Genome.txt` before running any of the analysis
-scripts. 23andMe users can get this file by logging in, choosing
-**Settings → DNA Relatives → Download Raw Data**, and saving the resulting
-text file.
+### 🌍 Ancestry / Ethnicity
+- Population markers  
+- Trait breakdown  
+- Interpretable summaries  
 
-### Example `Genome.txt`
+### 🧠 Disease Risk
+- SNP-based risk analysis  
+- Polygenic risk scoring  
+- Clear, simplified outputs  
 
-Below is a short sample illustrating the expected format:
+### ⏳ Longevity
+- Aging-related markers  
+- Protective vs. risk variants  
+
+Scripts:
+- `Longevity.py` → quick summary  
+- `Comprehensive_Longevity.py` → full probability analysis  
+
+### 💪 Fitness
+- Athletic trait probabilities  
+- Performance-related genetic insights  
+
+---
+
+## 📄 Input Format
+
+All scripts require a file named:
+
+```
+Genome.txt
+```
+
+### File Requirements
+- Tab-separated text file  
+- 4 columns (in order):
+
+```
+rsid    chromosome    position    genotype
+```
+
+- Lines starting with `#` are ignored (comments)
+
+### Example
 
 ```
 # rsid    chromosome  position  genotype
@@ -55,7 +69,30 @@ rs12562034	1	758311	GG
 rs3934834	1	995669	CT
 ```
 
-Place your own `Genome.txt` in the repository root before running any of
-the scripts.
+---
 
-_For education only. Not medical advice._ 
+## 📥 Getting Your Genome File
+
+If you’re using a personal genomics service:
+
+1. Log in  
+2. Go to **Settings → DNA Relatives**  
+3. Click **Download Raw Data**  
+4. Rename the file to `Genome.txt`  
+
+---
+
+## ⚠️ Disclaimer
+
+- This tool is for **educational purposes only**  
+- It **does not provide medical diagnoses**  
+- Results are based on currently known genetic associations  
+- Data is biased toward populations of European ancestry and may not generalize  
+
+---
+
+## 🧠 Notes
+
+- Not all genetic variants are known or included  
+- Environmental and lifestyle factors are **not accounted for**  
+- Interpret results cautiously and consult professionals for medical decisions  

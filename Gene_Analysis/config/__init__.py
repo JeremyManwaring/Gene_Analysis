@@ -1,0 +1,63 @@
+"""SNP database configuration."""
+
+from .snp_databases import (
+    DISEASE_SNPS,
+    DISEASE_STATS,
+    DISEASE_PRS_MODELS,
+    LONGEVITY_MARKERS,
+    LONGEVITY_TOTAL_MARKERS,
+    FITNESS_SNPS,
+    ANCESTRY_CATEGORIES,
+    get_all_snps_by_category,
+)
+from .pharmacogenomics_snps import (
+    PHARMACOGENOMICS_SNPS,
+    DRUG_RECOMMENDATIONS,
+)
+from .nutrition_snps import (
+    NUTRITION_SNPS,
+    VITAMIN_RECOMMENDATIONS,
+)
+from .sleep_snps import (
+    SLEEP_SNPS,
+    CHRONOTYPE_INTERPRETATION,
+)
+from .blood_type_snps import (
+    ABO_SNPS,
+    RHD_SNPS,
+    BLOOD_TYPE_COMPATIBILITY,
+)
+from .carrier_screening_snps import (
+    CARRIER_SCREENING_SNPS,
+    POPULATION_CARRIER_FREQUENCIES,
+)
+from .cognitive_snps import (
+    COGNITIVE_SNPS,
+    COGNITIVE_DOMAIN_WEIGHTS,
+    LEARNING_STYLE_INTERPRETATIONS,
+)
+
+__all__ = [
+    'DISEASE_SNPS',
+    'DISEASE_STATS',
+    'DISEASE_PRS_MODELS',
+    'LONGEVITY_MARKERS',
+    'LONGEVITY_TOTAL_MARKERS',
+    'FITNESS_SNPS',
+    'ANCESTRY_CATEGORIES',
+    'PHARMACOGENOMICS_SNPS',
+    'DRUG_RECOMMENDATIONS',
+    'NUTRITION_SNPS',
+    'VITAMIN_RECOMMENDATIONS',
+    'SLEEP_SNPS',
+    'CHRONOTYPE_INTERPRETATION',
+    'ABO_SNPS',
+    'RHD_SNPS',
+    'BLOOD_TYPE_COMPATIBILITY',
+    'CARRIER_SCREENING_SNPS',
+    'POPULATION_CARRIER_FREQUENCIES',
+    'COGNITIVE_SNPS',
+    'COGNITIVE_DOMAIN_WEIGHTS',
+    'LEARNING_STYLE_INTERPRETATIONS',
+    'get_all_snps_by_category',
+]

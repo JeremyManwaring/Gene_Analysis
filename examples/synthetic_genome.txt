@@ -1,0 +1,7 @@
+# SYNTHETIC TEST DATA. Not a person or medical reference.
+# genome build GRCh37
+# strand plus
+rsid	chromosome	position	genotype
+rs900000001	1	10001	AG
+rs900000002	2	10002	CC
+rs900000003	3	10003	CT

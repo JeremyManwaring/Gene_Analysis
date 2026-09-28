@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gene-evidence"
+version = "0.2.0"
+description = "Local, reproducible genotype-to-evidence annotation with explicit clinical limits"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest==8.4.2"]
+
+[project.scripts]
+gene-analysis = "Gene_Analysis.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["Gene_Analysis", "Gene_Analysis.analysis", "Gene_Analysis.config", "Gene_Analysis.evidence", "Gene_Analysis.utils"]
+
+[tool.pytest.ini_options]
+testpaths = ["Gene_Analysis/tests"]
+addopts = "--import-mode=importlib"
+norecursedirs = ["legacy", ".git", ".venv"]
